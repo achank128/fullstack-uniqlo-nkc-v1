@@ -1,0 +1,125 @@
+@use "../../scss/" as *;
+
+#cart {
+  margin-top: $topHeight;
+  .wrapper {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .cart-title {
+      margin: 20px 0;
+      h2 {
+        font-weight: 700;
+      }
+    }
+    .no-item {
+      height: 60vh;
+      padding: 40px 0;
+      .no-item-shopping {
+        margin-top: 40px;
+        @include btnIn;
+      }
+    }
+    .cart-content {
+      padding: 40px 0;
+      margin-bottom: 100px;
+      display: flex;
+      gap: 80px;
+      @include tablet {
+        flex-direction: column;
+        padding: 0;
+        gap: 40px;
+      }
+    }
+    .items {
+      flex: 2;
+    }
+    .summary {
+      flex: 1;
+      top: 140px;
+      position: sticky;
+      height: calc(100vh - $topHeight);
+      margin-bottom: 50px;
+      @include mobile {
+        top: 0;
+        position: relative;
+      }
+      .summary-content {
+        border: 1px solid $border-color;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+        .title {
+          font-size: $font-med;
+          font-weight: 700;
+          margin-bottom: 30px;
+        }
+        .item-subtotal {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          font-size: $font-xsm;
+        }
+        .subtotal {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-weight: 700;
+        }
+        .vat,
+        .shipping {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: $font-xsm;
+        }
+        .shipping {
+          margin-bottom: 30px;
+        }
+
+        .order-total {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-weight: 700;
+          font-size: $font-med;
+        }
+      }
+      .coupon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-top: 1px solid $border-color;
+        cursor: pointer;
+        .arrow-down {
+          transform: rotate(-90deg);
+        }
+        .icon-coupon {
+          margin-right: 6px;
+          margin-bottom: -6px;
+        }
+      }
+      .text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid $border-color;
+        padding: 10px 0;
+        margin-bottom: 20px;
+      }
+      .btn-checkout {
+        @include btnRed;
+        margin-bottom: 16px;
+      }
+      .btn-continue-shopping {
+        @include btnWhite;
+        margin-bottom: 16px;
+      }
+      .info-shipping {
+        color: $gray-color;
+        font-size: $font-xsm;
+      }
+    }
+  }
+}

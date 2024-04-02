@@ -1,0 +1,78 @@
+@use "../../scss/" as *;
+
+#sidebar {
+  z-index: 100;
+  height: calc(100vh - $topHeight);
+  position: sticky;
+  width: 240px;
+  top: $topHeight;
+  border-right: 1px solid $border-color;
+  @include mobile {
+    position: fixed;
+    left: 0;
+    top: $topHeight;
+    transform: translateX(-100%);
+    background-color: $white-color;
+    transition: all 500ms ease-in;
+  }
+  &.active-mobile {
+    @include mobile {
+      transform: translateX(0);
+    }
+  }
+  .btn-menu {
+    display: none;
+    @include mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -33px;
+      padding: 6px;
+      background-color: $white-color;
+      border: 1px solid $border-color;
+    }
+  }
+  .sidebar-container {
+    .menu {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  h3 {
+    font-size: $font-med;
+    color: $text-color;
+    font-weight: 500;
+    margin: 20px 10px;
+  }
+  .sidebar-icon {
+    margin-right: 8px;
+  }
+  li {
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: $font-sm;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid $bg-color;
+    color: $gray-color;
+    &:hover {
+      background-color: $bg-hover-color;
+    }
+  }
+  .active {
+    color: $teal-color;
+    border-left: 4px solid $teal-color;
+    background-color: $bg-hover-color;
+  }
+  .sidebar-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 30px 0;
+    .logout {
+      color: $red-color;
+      font-size: $font-xsm;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../scss/" as *;
+#home {
+  flex: 1;
+  .content {
+    margin: 0 24px;
+    padding: 30px;
+    background-color: $white-color;
+    border: 1px solid $border-color;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .item {
+      padding: 20px;
+      border: 1px solid $border-color;
+      border-radius: 10px;
+      box-shadow: 0 0 0.3125rem #1718180d;
+    }
+    h4 {
+      font-size: 1.175rem;
+      margin-bottom: 8px;
+    }
+  }
+}

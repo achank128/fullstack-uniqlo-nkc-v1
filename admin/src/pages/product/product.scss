@@ -1,0 +1,162 @@
+@use "../../scss/" as *;
+
+#product {
+  flex: 1;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $white-color;
+    border: 1px solid $border-color;
+    margin: 0 24px;
+    padding: 40px 20px;
+    gap: 24px;
+    input:focus,
+    textarea:focus {
+      outline: none;
+    }
+    textarea {
+      font-family: "Noto Sans", sans-serif;
+    }
+    .product-detail {
+      flex: 1;
+      .product-img {
+        margin-bottom: 20px;
+        .img-list {
+          width: 100%;
+          border: 1px solid $border-color;
+          margin-bottom: 20px;
+          padding: 16px;
+          display: flex;
+          flex-wrap: wrap;
+          .img-item {
+            position: relative;
+            width: 100px;
+            margin: 8px;
+          }
+          .remove {
+            position: absolute;
+            color: $red-color;
+            top: 4px;
+            right: 4px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .img-input {
+          display: flex;
+          input {
+            flex: 1;
+            padding: 12px;
+            margin-right: 20px;
+          }
+        }
+      }
+      .product-overview,
+      .product-material {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        textarea {
+          font-size: $font-sm;
+          padding: 8px;
+          margin: 12px 0;
+        }
+      }
+    }
+    .product-info {
+      flex: 1;
+      .product-name {
+        margin-bottom: 20px;
+        input {
+          padding: 8px 12px;
+          font-size: $font-med;
+          width: 100%;
+        }
+      }
+      .product-desc {
+        margin-bottom: 20px;
+        textarea {
+          width: 100%;
+          padding: 8px 12px;
+        }
+      }
+      .product-price {
+        margin-bottom: 20px;
+        input {
+          padding: 8px 12px;
+          font-size: $font-sm;
+        }
+      }
+      .product-for,
+      .product-size,
+      .product-rating,
+      .product-review {
+        margin-bottom: 20px;
+        input {
+          padding: 6px 10px;
+          font-size: $font-sm;
+        }
+      }
+      .product-size-list {
+        margin-bottom: 20px;
+        .size-list {
+          display: flex;
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid $border-color;
+            color: $gray-color;
+            font-size: $font-xsm;
+            &:hover {
+              border: 2px solid $text-color;
+              color: $text-color;
+              font-weight: 600;
+            }
+          }
+          .size-selected {
+            border: 2px solid $text-color;
+            color: $text-color;
+            font-weight: 600;
+          }
+        }
+      }
+      .product-color-list {
+        margin-bottom: 20px;
+        .color-list {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 8px 0;
+        }
+        li {
+          padding: 2px;
+          margin-right: 3px;
+          border: 2px solid $white-color;
+          div {
+            width: 45px;
+            height: 45px;
+            border: 1px solid $gray-color;
+          }
+          &:hover {
+            border: 2px solid $text-color;
+          }
+        }
+        .color-selected {
+          border: 2px solid $text-color;
+        }
+      }
+      .product-instock {
+        select {
+          padding: 12px 20px;
+          font-size: $font-sm;
+        }
+      }
+    }
+  }
+}

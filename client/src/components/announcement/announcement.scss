@@ -1,0 +1,34 @@
+@use "../../scss/" as *;
+#announcement {
+  position: fixed;
+  top: 0;
+  background-color: $bg-gray-color;
+  width: 100%;
+  z-index: 10000;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $announcement;
+    font-size: $font-xsm;
+    @include mobile {
+      justify-content: end;
+      padding: 0 20px;
+    }
+    .an-left {
+      @include mobile {
+        display: none;
+      }
+    }
+    span {
+      cursor: pointer;
+      &:nth-child(2) {
+        margin: 0 20px;
+      }
+    }
+    .english {
+      font-weight: 600;
+    }
+  }
+}

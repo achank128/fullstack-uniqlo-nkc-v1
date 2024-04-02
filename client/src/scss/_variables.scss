@@ -1,0 +1,22 @@
+// color
+$bg-gray-color: #f4f4f4;
+$text-color: #1b1b1b;
+$border-color: #ababab;
+$white-color: #ffffff;
+$teal-color: #378694;
+$red-color: #ff0000;
+$gray-color: #7d7d7d;
+$yellow-color: #ebbe00;
+
+//font size
+$font-xsm: 0.875rem;
+$font-sm: 1rem;
+$font-med: 1.25rem;
+$font-lg: 1.375rem;
+$font-xlg: 2rem;
+$font-xxlg: 3rem;
+
+//height
+$announcement: 40px;
+$navbar: 72px;
+$topHeight: calc($announcement + $navbar);

@@ -1,0 +1,73 @@
+@use "../../scss/" as *;
+
+#wish-list {
+  margin-top: $topHeight;
+  .wrapper {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .title {
+      margin: 40px 0;
+      h2 {
+        font-weight: 700;
+      }
+    }
+    .list-items {
+      border: 1px solid $border-color;
+      padding: 30px 20px;
+      margin-bottom: 100px;
+      .item {
+        position: relative;
+      }
+      .btn-remove {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        padding: 4px;
+      }
+      .item-content {
+        display: flex;
+        padding: 30px 0;
+        border-bottom: 1px solid $border-color;
+        .img {
+          max-width: 210px;
+          margin-right: 20px;
+          @include mobile {
+            width: 160px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+        }
+        .name {
+          font-weight: 700;
+          font-size: $font-sm;
+          margin-bottom: 10px;
+        }
+        .id {
+          color: $gray-color;
+        }
+        .price {
+          margin-top: 12px;
+          font-weight: 700;
+        }
+        .price-original {
+          font-size: $font-xsm;
+          text-decoration: line-through;
+        }
+        .price-limited {
+          font-size: $font-med;
+          color: $red-color;
+        }
+        .sale {
+          color: $red-color;
+        }
+      }
+    }
+  }
+}

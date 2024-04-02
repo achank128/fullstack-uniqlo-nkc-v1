@@ -1,0 +1,157 @@
+@use "../../scss/" as *;
+
+#navbar {
+  border-bottom: 1px solid $border-color;
+  position: fixed;
+  top: $announcement;
+  width: 100%;
+  height: $navbar;
+  z-index: 1000;
+  background-color: $white-color;
+  .container {
+    height: 100%;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    @include tablet {
+      padding: 0 20px;
+    }
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+    font-size: $font-sm;
+    text-transform: uppercase;
+    .logo {
+      height: 56px;
+      margin-right: 28px;
+      @include mobile {
+        height: 36px;
+        margin-right: 6px;
+      }
+      img {
+        height: 100%;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      height: 110%;
+      padding: 16px 0;
+      li {
+        padding: 0 16px;
+        @include mobile {
+          padding: 6px;
+        }
+        cursor: pointer;
+        font-size: $font-xsm;
+        .item-hover {
+          border-bottom: 3px solid #378694;
+        }
+      }
+    }
+  }
+  .nav-center {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    .item {
+      margin-left: 30px;
+      @include mobile {
+        margin-left: 8px;
+      }
+    }
+    .icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .searchform {
+      position: relative;
+      @include tablet {
+        width: 30px;
+        height: 30px;
+      }
+      input {
+        @include tablet {
+          display: none;
+        }
+        font-size: $font-xsm;
+        border: 1px solid $border-color;
+        padding: 8px 28px 8px 16px;
+        outline: none;
+        width: 215px;
+        &:focus {
+          border: 1px solid $teal-color;
+        }
+      }
+      .search-btn {
+        position: absolute;
+        @include tablet {
+          top: 0;
+          right: 0;
+          font-size: 24px;
+        }
+        top: 2px;
+        right: 10px;
+        height: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        .search-icon {
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .login,
+    .cart,
+    .favorite {
+      position: relative;
+    }
+    .user {
+      display: none;
+      position: absolute;
+      top: 150%;
+      right: 0;
+      background-color: $white-color;
+      font-size: $font-xsm;
+      width: 180px;
+      border: 1px solid $border-color;
+      padding: 12px 0;
+      li {
+        cursor: pointer;
+        padding: 8px 20px;
+        &:hover {
+          background-color: $bg-gray-color;
+          color: $teal-color;
+        }
+      }
+      &.open {
+        display: block;
+      }
+    }
+    .cart-amount,
+    .wishlist-amount {
+      display: none;
+      position: absolute;
+      top: -5px;
+      right: -6px;
+      width: 14px;
+      height: 14px;
+      background-color: $red-color;
+      color: $white-color;
+      text-align: center;
+      font-size: 10px;
+      border-radius: 50%;
+    }
+  }
+}

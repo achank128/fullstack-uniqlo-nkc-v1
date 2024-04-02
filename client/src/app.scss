@@ -1,0 +1,129 @@
+@use "./scss/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  @include tablet {
+    font-size: 95%;
+  }
+  @include mobile {
+    font-size: 90%;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-family: "Noto Sans", sans-serif;
+  color: $text-color;
+}
+
+// Text
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+p {
+  line-height: 1.5;
+}
+li {
+  list-style: none;
+}
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: $text-color;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+span {
+  cursor: pointer;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.container {
+  max-width: 1232px;
+  margin: auto;
+}
+
+.active {
+  display: block !important;
+}
+
+.breadcrumb {
+  padding: 16px 0;
+  margin-bottom: 20px;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      color: $gray-color;
+      font-size: $font-xsm;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: underline;
+      a {
+        color: $gray-color;
+      }
+      &:last-child {
+        text-decoration: none;
+        text-transform: none;
+      }
+    }
+  }
+  .slash {
+    text-decoration: none;
+    margin: 0 8px;
+  }
+}
+
+.arrow-down {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s linear;
+  .arrow-down-icon {
+    color: $border-color;
+    font-size: 1.75rem;
+  }
+}
+.arrow-up {
+  transform: rotate(-180deg);
+}

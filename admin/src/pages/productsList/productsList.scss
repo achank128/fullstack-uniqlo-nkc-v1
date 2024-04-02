@@ -1,0 +1,25 @@
+@use "../../scss/" as *;
+
+#products-list {
+  flex: 1;
+  .product-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .stock {
+    margin-left: 20px;
+    .stocking {
+      color: rgb(23, 158, 23);
+    }
+    .out-of-stock {
+      color: $red-color;
+    }
+  }
+}

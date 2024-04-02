@@ -1,0 +1,197 @@
+@use "../../scss/" as *;
+#categories {
+  width: 25%;
+  padding-right: 20px;
+  margin-bottom: 100px;
+  @include tablet {
+    padding-right: 4px;
+  }
+  @include mobile {
+    display: none;
+  }
+  .title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: $font-lg;
+    }
+  }
+  .categories-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+    .category-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 4px;
+      .head-text {
+        text-transform: uppercase;
+      }
+    }
+    .categories-list {
+      display: block;
+      padding-left: 20px;
+      height: 0;
+      overflow: hidden;
+      li {
+        cursor: pointer;
+        padding: 6px 0;
+        font-size: $font-xsm;
+      }
+    }
+    .show-list-categories {
+      height: 100%;
+    }
+  }
+  .bold {
+    font-weight: 700;
+  }
+  .filter {
+    padding-top: 8px;
+    .filter-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px;
+    }
+    .filter-active {
+      display: flex !important;
+    }
+    .size-list {
+      display: none;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-xsm;
+        color: $gray-color;
+        width: 46px;
+        height: 46px;
+        border: 1px solid $border-color;
+        margin-right: -1px;
+        cursor: pointer;
+        &:hover {
+          border: 1.5px solid $text-color !important;
+          color: $text-color;
+          z-index: 1;
+        }
+      }
+      .size-selected {
+        border: 1.5px solid $text-color;
+        color: $text-color;
+        z-index: 1;
+      }
+    }
+    .color-list {
+      display: none;
+      flex-wrap: wrap;
+      li {
+        margin: 0px;
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
+        &:hover {
+          border: 1.5px solid $text-color;
+        }
+      }
+      .color-selected {
+        border: 1.5px solid $text-color;
+      }
+      .filter-white {
+        background: #fff;
+      }
+      .filter-gray {
+        background: #dedede;
+      }
+      .filter-black {
+        background: #3d3d3d;
+      }
+      .filter-pink {
+        background: #f5c0c9;
+      }
+      .filter-red {
+        background: #eb3417;
+      }
+      .filter-orange {
+        background: #f3a72c;
+      }
+      .filter-beige {
+        background: #efebd4;
+      }
+      .filter-brown {
+        background: #714e36;
+      }
+      .filter-yellow {
+        background: #ffff3f;
+      }
+      .filter-green {
+        background: #387d1f;
+      }
+      .filter-blue {
+        background: #0003f9;
+      }
+      .filter-purple {
+        background: #741a7c;
+      }
+    }
+    .price-list {
+      display: none;
+      flex-direction: column;
+      li {
+        display: flex;
+        align-items: center;
+        font-size: $font-xsm;
+        color: $gray-color;
+        margin-bottom: 6px;
+        cursor: pointer;
+        .icon-check {
+          color: $border-color;
+          margin-right: 6px;
+        }
+        &:hover {
+          color: $teal-color;
+          .icon-check {
+            color: $teal-color;
+          }
+        }
+      }
+      .price-selected {
+        color: $teal-color;
+        .icon-check {
+          color: $teal-color;
+        }
+      }
+    }
+    .ac-list {
+      display: none;
+      flex-direction: column;
+      li {
+        display: flex;
+        align-items: center;
+        font-size: $font-xsm;
+        color: $gray-color;
+        margin-bottom: 6px;
+        cursor: pointer;
+        .icon-check {
+          color: $border-color;
+          margin-right: 6px;
+        }
+        &:hover {
+          color: $teal-color;
+          .icon-check {
+            color: $teal-color;
+          }
+        }
+      }
+      .ac-selected {
+        color: $teal-color;
+        .icon-check {
+          color: $teal-color;
+        }
+      }
+    }
+  }
+}

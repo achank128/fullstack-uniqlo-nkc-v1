@@ -1,0 +1,80 @@
+@use "../../scss/" as *;
+
+.fly-out-active {
+  display: block !important;
+}
+
+#fly-out {
+  display: none;
+  animation: opacity 175ms linear;
+  position: fixed;
+  top: $topHeight;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: $white-color;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+  }
+  .wrapper {
+    padding: 20px 0;
+    display: flex;
+    @include tablet {
+      padding: 20px;
+    }
+    .fo-left {
+      width: 80%;
+      display: flex;
+      @include mobile {
+        width: 60%;
+        flex-direction: column;
+      }
+      .accordion {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        @include mobile {
+          width: 50%;
+        }
+      }
+    }
+
+    .accordion-head {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      @include tablet {
+        margin-bottom: 5px;
+      }
+    }
+
+    .accordion-item {
+      font-size: $font-xsm;
+      font-weight: 400;
+      margin-bottom: 10px;
+      @include tablet {
+        margin-bottom: 5px;
+      }
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .fo-right {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid $border-color;
+      padding-left: 24px;
+      margin-left: -12px;
+      @include mobile {
+        width: 40%;
+      }
+    }
+  }
+}

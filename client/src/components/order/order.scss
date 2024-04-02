@@ -1,0 +1,54 @@
+@use "../../scss/" as *;
+#order {
+  display: flex;
+  padding: 20px;
+  border: 1px solid $border-color;
+  margin-bottom: 20px;
+  @include mobile {
+    flex-direction: column;
+  }
+  .info {
+    flex: 1;
+    margin-right: 50px;
+    @include tablet {
+      margin-right: 20px;
+    }
+    .address {
+      p {
+        font-size: $font-xsm;
+      }
+    }
+  }
+  .list-product {
+    flex: 1;
+    height: 300px;
+    overflow-y: auto;
+  }
+  .product-item {
+    display: flex;
+    margin-bottom: 20px;
+    .product-img {
+      width: 100px;
+      img {
+        width: 100%;
+      }
+      @include tablet {
+        width: 60px;
+      }
+    }
+    .product-info {
+      flex: 1;
+      margin-left: 20px;
+      .name,
+      .price {
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      p {
+        text-transform: capitalize;
+        font-size: $font-xsm;
+      }
+    }
+  }
+}

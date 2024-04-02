@@ -1,0 +1,77 @@
+@use "../../scss/" as *;
+
+#profile {
+  margin-top: $topHeight;
+  .wrapper {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .profile-title {
+      margin: 40px 0;
+      h2 {
+        font-weight: 700;
+      }
+    }
+
+    .content {
+      border: 1px solid $border-color;
+      padding: 30px 20px;
+      margin-bottom: 100px;
+      h3 {
+        font-weight: 700;
+        margin: 20px 0;
+      }
+      .item-info {
+        margin-bottom: 16px;
+        .gender {
+          text-transform: capitalize;
+        }
+      }
+      .profile {
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        @include mobile {
+          flex-direction: column;
+        }
+        .profile-content {
+          flex: 1;
+          .btn-change-pass {
+            @include btnWhite;
+            width: 200px;
+          }
+        }
+        .change-pass {
+          flex: 1;
+          margin-top: 30px;
+          display: none;
+          &.active {
+            display: block;
+          }
+          label {
+            display: block;
+            font-weight: 700;
+            padding: 6px 0;
+          }
+          .input {
+            @include inputLog;
+            width: 300px;
+            margin-bottom: 20px;
+            input {
+              padding: 8px 12px;
+            }
+          }
+          .btn-update {
+            @include btnIn;
+            width: 200px;
+            font-size: $font-xsm;
+          }
+          .error {
+            color: $red-color;
+          }
+        }
+      }
+    }
+  }
+}

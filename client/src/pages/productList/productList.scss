@@ -1,0 +1,151 @@
+@use "../../scss/" as *;
+
+#product-list {
+  margin-top: $topHeight;
+  .wrapper {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .sort-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      .left {
+        width: 25%;
+      }
+      .right {
+        width: 75%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .title {
+        padding-bottom: 20px;
+        font-weight: 700;
+        font-size: $font-xsm;
+      }
+      .results {
+        margin-bottom: 20px;
+      }
+      .sort {
+        position: relative;
+        width: 25%;
+        @include mobile {
+          width: 40%;
+        }
+        .sort-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 7px 12px;
+          border: 1px solid $border-color;
+          cursor: pointer;
+          user-select: none;
+        }
+        .active-list-sort {
+          display: block !important;
+        }
+        .list-sort {
+          display: none;
+          user-select: none;
+          position: absolute;
+          width: 100%;
+          border: 1px solid $text-color;
+          background-color: $white-color;
+          z-index: 2;
+          li {
+            cursor: pointer;
+            padding: 10px 12px;
+            font-size: $font-xsm;
+            &:hover {
+              color: $teal-color;
+              background-color: $bg-gray-color;
+            }
+          }
+          .selected {
+            color: $teal-color;
+            background-color: $bg-gray-color;
+          }
+        }
+      }
+    }
+    .list {
+      display: flex;
+      margin-bottom: 60px;
+    }
+  }
+
+  .products {
+    width: 75%;
+    @include mobile {
+      width: 100%;
+    }
+    .products-container {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+    }
+    .load-more {
+      width: 100%;
+      padding: 16px;
+      margin-top: 20px;
+      border-top: 1px solid $border-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        font-weight: 700;
+        font-size: $font-sm;
+        &:hover {
+          color: $gray-color;
+        }
+      }
+      .icon-down {
+        color: $border-color;
+        font-size: 28px;
+        margin-bottom: -8px;
+      }
+    }
+  }
+
+  .backtotop-btn {
+    display: none;
+    user-select: none;
+    z-index: 100;
+    position: fixed;
+    background-color: $white-color;
+    border: 0.2px solid #ccc;
+    border-radius: 2px;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 100px;
+    .back {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    span {
+      line-height: 0.5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .up-icon {
+      font-size: 28px;
+    }
+    &.active {
+      display: block;
+    }
+  }
+}

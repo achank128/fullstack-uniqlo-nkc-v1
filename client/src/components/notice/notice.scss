@@ -1,0 +1,50 @@
+@use "../../scss/" as *;
+#notice {
+  .notice-wrapper {
+    border: 1px solid $border-color;
+    padding: 28px 20px;
+    text-transform: uppercase;
+    .title {
+      padding: 16px 4vw 0;
+      margin-bottom: 8px;
+      h3 {
+        font-weight: 400;
+      }
+    }
+    .text {
+      padding: 16px 4vw 0;
+      font-weight: 700;
+      text-decoration: underline;
+      &:last-child {
+        margin-bottom: 16px;
+      }
+      @include mobile {
+        font-size: $font-xsm;
+      }
+    }
+  }
+
+  .information {
+    @include tablet {
+      text-align: center;
+    }
+    .info-title {
+      margin: 40px 0px;
+      h2 {
+        font-weight: 700;
+      }
+    }
+    .info-content {
+      display: flex;
+      li {
+        margin-bottom: 20px;
+      }
+    }
+    .info-left {
+      flex: 1;
+    }
+    .info-right {
+      flex: 1;
+    }
+  }
+}

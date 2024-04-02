@@ -1,0 +1,80 @@
+@use "../../scss/" as *;
+#product-item {
+  background-color: $white-color;
+  position: relative;
+  margin-bottom: 30px;
+  .favorite-add {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    .favorite-border-icon {
+      color: $text-color;
+    }
+    .favorite-icon {
+      animation: scaleIcon 200ms linear;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $red-color;
+    }
+  }
+  .product-img {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .product-info {
+    .for-size {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: $font-xsm;
+      font-weight: 700;
+      color: $border-color;
+      padding: 6px 0;
+      .size {
+        max-width: 150px;
+      }
+    }
+  }
+  .name {
+    font-size: $font-sm;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .price {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    .price-original {
+      text-decoration-line: line-through;
+      font-size: $font-xsm;
+      opacity: 0.85;
+    }
+    .price-limited {
+      color: $red-color;
+      line-height: 1.1;
+      font-size: $font-med;
+    }
+  }
+  .price-flag {
+    color: $red-color;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .rating {
+    display: flex;
+    .icon {
+      font-size: 18px;
+      color: $yellow-color;
+    }
+    .review-count {
+      margin-top: -1px;
+      margin-left: 6px;
+      font-size: $font-xsm;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@use "../../scss/" as *;
+
+#login {
+  margin-top: $topHeight;
+  .wrapper {
+    @include mobile {
+      padding: 0 20px;
+    }
+    .login-container {
+      display: flex;
+      padding: 30px 20px;
+      margin-top: 40px;
+      margin-bottom: 100px;
+      border: 1px solid $border-color;
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+    .login-content {
+      flex: 1;
+      padding-right: 20px;
+      border-right: 1px solid $border-color;
+      @include mobile {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 30px;
+      }
+      .title {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        h2 {
+          font-weight: 700;
+        }
+        .required {
+          color: $teal-color;
+        }
+      }
+      .text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .error {
+        color: $red-color;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .email-label,
+      .pass-label {
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 4px;
+      }
+
+      .input-email,
+      .input-pass {
+        border-radius: 2px;
+        padding: 2px 3px;
+        @include inputLog;
+      }
+      .pass-text {
+        color: $gray-color;
+        font-size: $font-xsm;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      .show-pass {
+        @include checkbox;
+        margin-bottom: 10px;
+      }
+      .term,
+      .privacy,
+      .forgot {
+        font-weight: 700;
+        text-decoration: underline;
+        font-size: $font-xsm;
+        margin: 4px 0;
+      }
+      .login-submit {
+        @include btnIn;
+        margin-top: 20px;
+      }
+    }
+    .create-account {
+      flex: 1;
+      padding-left: 20px;
+      overflow: hidden;
+      @include mobile {
+        padding: 0;
+        margin-top: 50px;
+      }
+      .title {
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .text {
+        margin-bottom: 30px;
+      }
+      .btn-create-acc {
+        @include btnIn;
+      }
+    }
+  }
+  .footer-login {
+    text-align: center;
+    font-size: $font-xsm;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+}

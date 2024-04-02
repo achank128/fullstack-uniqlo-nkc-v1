@@ -1,0 +1,70 @@
+@use "../../scss/" as *;
+
+#login {
+  margin-top: $topHeight;
+  @include mobile {
+    padding: 0 20px;
+  }
+  .login-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px 20px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    border: 1px solid $border-color;
+  }
+  .login-content {
+    .title {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      h2 {
+        font-weight: 700;
+      }
+      .required {
+        color: $teal-color;
+      }
+    }
+    .text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .error {
+      color: $red-color;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .email-label,
+    .pass-label {
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .input-email,
+    .input-pass {
+      border-radius: 2px;
+      padding: 2px 3px;
+      @include inputLog;
+    }
+    .pass-text {
+      color: $gray-color;
+      font-size: $font-xsm;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .show-pass {
+      @include checkbox;
+      margin-bottom: 10px;
+    }
+    .login-submit {
+      @include btnIn;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,174 @@
+@use "../../scss/" as *;
+
+#checkout {
+  margin-top: $topHeight;
+  .wrapper {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .checkout-title {
+      margin: 20px 0;
+      h2 {
+        font-weight: 700;
+      }
+    }
+    .checkout-content {
+      padding: 40px 0;
+      margin-bottom: 100px;
+      display: flex;
+      gap: 80px;
+      @include tablet {
+        flex-direction: column-reverse;
+        padding: 0;
+        gap: 40px;
+      }
+    }
+    .form-address {
+      flex: 2;
+      border: 1px solid $border-color;
+      padding: 20px;
+      .heading {
+        margin: 24px 0;
+        h2 {
+          font-weight: 700;
+        }
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
+      .input-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .label {
+        width: 30%;
+        font-weight: 700;
+        padding: 10px 0;
+      }
+      .name-input,
+      .phone-input,
+      .address-details-input {
+        width: 70%;
+        @include inputLog;
+        p {
+          margin-top: 6px;
+          font-size: $font-xsm;
+        }
+      }
+
+      .address-input {
+        width: 40%;
+        select {
+          width: 100%;
+          padding: 12px;
+          color: $gray-color;
+        }
+        @include mobile {
+          width: 70%;
+        }
+      }
+
+      .via {
+        width: 70%;
+        margin-bottom: 40px;
+      }
+
+      .order-submit {
+        @include btnIn;
+        margin-bottom: 30px;
+      }
+      .error {
+        color: $red-color;
+      }
+    }
+    .summary {
+      flex: 1;
+      top: 140px;
+      position: sticky;
+      height: calc(100vh);
+      margin-bottom: 50px;
+      @include tablet {
+        top: 0;
+        position: relative;
+        margin-bottom: 0;
+      }
+      .summary-content {
+        border: 1px solid $border-color;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+        .title {
+          font-size: $font-med;
+          font-weight: 700;
+          margin-bottom: 30px;
+        }
+        .item-subtotal {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          font-size: $font-xsm;
+        }
+        .subtotal {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-weight: 700;
+        }
+        .vat,
+        .shipping {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: $font-xsm;
+        }
+        .shipping {
+          margin-bottom: 30px;
+        }
+
+        .order-total {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-weight: 700;
+          font-size: $font-med;
+        }
+        .list-img-item {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .item-img {
+          width: 100px;
+          padding-right: 20px;
+          margin-bottom: 10px;
+          img {
+            width: 100%;
+          }
+          .quantity-item {
+            text-align: right;
+            line-height: 1.1;
+          }
+        }
+      }
+      .coupon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        cursor: pointer;
+        .arrow-down {
+          transform: rotate(-90deg);
+        }
+        .icon-coupon {
+          margin-right: 6px;
+          margin-bottom: -6px;
+        }
+      }
+    }
+  }
+}

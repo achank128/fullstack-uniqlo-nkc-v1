@@ -1,0 +1,128 @@
+@use "../../scss/" as *;
+
+#item-content {
+  position: relative;
+  display: flex;
+  margin-top: 16px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $border-color;
+  .remove-item {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .img {
+    max-width: 210px;
+    margin-right: 20px;
+    @include mobile {
+      width: 160px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    p {
+      margin: 2px 0;
+      text-transform: capitalize;
+    }
+  }
+  .name {
+    font-weight: 700;
+    font-size: $font-sm;
+    margin-bottom: 6px;
+    width: 80%;
+  }
+  .id {
+    color: $gray-color;
+  }
+  .price {
+    font-size: $font-xsm;
+    margin-top: 12px;
+    font-weight: 700;
+    color: $red-color;
+  }
+  .sale {
+    color: $red-color;
+  }
+  .quanlity-subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+  .quanlity {
+    position: relative;
+    .quanlity-name {
+      font-weight: 700;
+      font-size: $font-xsm;
+      margin: 10px 0;
+    }
+    .quality-select {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid $border-color;
+      user-select: none;
+      padding: 0 8px 0 16px;
+      width: 135px;
+      height: 45px;
+      @include mobile {
+        width: 80px;
+      }
+    }
+    .inc-quanlity {
+      position: absolute;
+      right: -36px;
+      top: 55%;
+      .add-icon {
+        font-size: 28px;
+        color: $text-color;
+        &:hover {
+          color: $gray-color;
+        }
+      }
+    }
+    .quanlity-list {
+      display: none;
+      z-index: 1;
+      position: absolute;
+      width: 135px;
+      border: 1px solid $text-color;
+      background-color: $white-color;
+      border-top: none;
+      cursor: pointer;
+      user-select: none;
+      @include mobile {
+        width: 80px;
+      }
+      li {
+        padding: 8px 16px;
+        &:hover {
+          background-color: $bg-gray-color;
+          color: $teal-color;
+        }
+      }
+    }
+  }
+  .subtotal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 700;
+    .label {
+      font-size: $font-xsm;
+      margin-right: 5px;
+    }
+    .total {
+      color: $red-color;
+    }
+  }
+}

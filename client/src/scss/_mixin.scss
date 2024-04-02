@@ -1,0 +1,129 @@
+@use "./variables" as *;
+@mixin btnImg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  color: $gray-color;
+  background-color: rgba(246, 246, 246, 0.75);
+  &:hover {
+    color: $white-color;
+    background-color: rgba(146, 145, 145, 0.75);
+  }
+}
+@mixin btnSlide {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: $white-color;
+  font-weight: 700;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+@mixin descDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+@mixin btnRed {
+  width: 100%;
+  height: 45px;
+  background-color: $red-color;
+  font-weight: 700;
+  color: $white-color;
+  font-size: $font-sm;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+@mixin btnWhite {
+  width: 100%;
+  height: 45px;
+  background-color: $white-color;
+  font-weight: 700;
+  font-size: $font-sm;
+  border: 1px solid $text-color;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+@mixin btnIn {
+  height: 45px;
+  width: 300px;
+  background-color: $text-color;
+  color: $white-color;
+  font-size: $font-sm;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@mixin inputLog {
+  input {
+    width: 100%;
+    border: none;
+    background-color: $bg-gray-color;
+    border-bottom: 1px solid $border-color;
+    padding: 12px;
+    font-size: $font-sm;
+    line-height: 1.5;
+    outline: none;
+    &:focus {
+      border-radius: 2px;
+      background-color: $white-color;
+      border-bottom: 2px solid $teal-color;
+      outline: 1px solid rgba($teal-color, 0.2);
+    }
+    &.error-input {
+      border-bottom: 2px solid $red-color !important;
+      outline: 1px solid rgba($red-color, 0.2) !important;
+    }
+  }
+}
+
+@mixin checkbox {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  user-select: none;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid $border-color;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 8px;
+      top: 5px;
+      width: 4px;
+      height: 8px;
+      border: solid $white-color;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+  input:checked ~ .checkmark {
+    border: none;
+    background-color: $text-color;
+  }
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}

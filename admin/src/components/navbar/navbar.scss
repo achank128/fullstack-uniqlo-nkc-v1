@@ -1,0 +1,48 @@
+@use "../../scss/" as *;
+
+#navbar {
+  border-bottom: 1px solid $border-color;
+  position: fixed;
+  width: 100%;
+  height: $topHeight;
+  top: 0;
+  z-index: 1000;
+  background-color: $white-color;
+  .navbar-container {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      height: 56px;
+      img {
+        height: 100%;
+      }
+    }
+    .user {
+      .account {
+        a {
+          display: flex;
+          align-items: center;
+          font-size: $font-xsm;
+          font-weight: 500;
+        }
+        .admin-img {
+          height: 40px;
+          width: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 1px solid $border-color;
+          margin-right: 10px;
+          img {
+            width: 100%;
+          }
+        }
+        &:hover {
+          color: $gray-color;
+        }
+      }
+    }
+  }
+}

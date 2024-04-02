@@ -1,0 +1,108 @@
+@use "../../scss/" as *;
+
+#footer {
+  background-color: $bg-gray-color;
+
+  .footer-top {
+    padding: 52px 20px 20px 20px;
+    border-bottom: 1px solid $border-color;
+  }
+  .footer-top-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 40px;
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center;
+      gap: 20px;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+      font-size: $font-med;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    span {
+      font-size: $font-xsm;
+      margin-bottom: 20px;
+      @include tablet {
+        margin-bottom: 10px;
+      }
+    }
+    .text {
+      font-size: $font-xsm;
+      width: 75%;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left !important;
+    }
+    .subscribe {
+      font-size: $font-sm;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-align: left;
+    }
+    .social-list {
+      display: flex;
+      margin-top: -10px;
+      @include mobile {
+        justify-content: center;
+      }
+    }
+    .icon {
+      font-size: 40px;
+      color: $gray-color;
+      cursor: pointer;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+  .footer-top-language {
+    .language-active {
+      font-weight: 600;
+    }
+  }
+
+  .footer-bottom {
+    @include tablet {
+      padding: 0 20px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      color: $gray-color;
+    }
+    .terms {
+      width: 50%;
+      text-align: right;
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+      span {
+        margin-left: 20px;
+        font-size: $font-xsm;
+        text-decoration: underline;
+      }
+    }
+    .text-desc {
+      font-size: $font-xsm;
+    }
+    .check {
+      width: 160px;
+      margin: 10px;
+    }
+  }
+}
